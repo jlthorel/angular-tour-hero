@@ -1,0 +1,20 @@
+<h2>Users</h2>
+<table>
+    <tr>
+        <th>#</th>
+        <th><a (click)="sortOn('firstname')">firstname</a></th>
+        <th><a (click)="sortOn('lastname')">lastname</a></th>
+        <th>prefix</th>
+        <th>email</th>
+        <th>phone</th>
+    </tr>
+    <tr *ngFor="let oneuser  of dataToDisplay">
+        <td>{{oneuser.id}}</td>
+        <td>{{oneuser.firstname}}</td>
+        <td>{{oneuser.lastname}}</td>
+        <td>{{oneuser.prefix}}</td>
+        <td>{{oneuser.email}}</td>
+        <td>{{oneuser.phone}}</td>
+    </tr>
+</table>
+<app-table-pagination [allPagesNumber]="20" (changePage)="onPageChange($event)"></app-table-pagination>
